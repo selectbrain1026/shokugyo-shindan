@@ -255,11 +255,14 @@ body {
         justify-content: center;
     }
 
+    .main-title {
+        line-height: 1.5; /* 行間を少し調整 */
+    }
     .main-title-sub {
-        font-size: 1.2em;
+        font-size: 1.1em; /* 少し小さくしてバランスをとる */
     }
     .main-title-main {
-        font-size: 1.8em;
+        font-size: 1.7em; /* こちらも少し調整 */
     }
 
     .description {
