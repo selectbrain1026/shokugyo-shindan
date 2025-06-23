@@ -42,15 +42,15 @@ body {
 .main-title {
     color: var(--primary-color);
     margin-bottom: 20px;
-    line-height: 1.4;
+    line-height: 1.5; /* 行間を調整 */
 }
 .main-title-sub {
-    display: block;
+    display: block; /* これで改行される */
     font-size: 1.5em;
     font-weight: normal;
 }
 .main-title-main {
-    display: block;
+    display: block; /* これで改行される */
     font-size: 2.2em;
     font-weight: bold;
 }
@@ -255,14 +255,11 @@ body {
         justify-content: center;
     }
 
-    .main-title {
-        line-height: 1.5; /* 行間を少し調整 */
-    }
     .main-title-sub {
-        font-size: 1.1em; /* 少し小さくしてバランスをとる */
+        font-size: 1.1em;
     }
     .main-title-main {
-        font-size: 1.7em; /* こちらも少し調整 */
+        font-size: 1.8em;
     }
 
     .description {
