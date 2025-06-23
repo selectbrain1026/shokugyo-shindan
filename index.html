@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【寅二郎ワークス完全オリジナル】ビッグ・ファイブ適職診断</title>
+    <!-- ▼▼▼【修正】タイトルを汎用的なものに変更 ▼▼▼ -->
+    <title>ビッグ・ファイブ適職診断</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,7 @@
     <div class="container">
         <div id="start-screen">
             <h1 class="main-title">
-                <span class="main-title-sub">【寅二郎ワークス完全オリジナル】</span>
+                <!-- ▼▼▼【削除】「【寅二郎ワークス完全オリジナル】」のspanタグを削除 ▼▼▼ -->
                 <span class="main-title-main">ビッグ・ファイブ適職診断</span>
             </h1>
             <p class="description">
@@ -24,7 +25,6 @@
         </div>
 
         <div id="quiz-screen" class="hidden">
-            <!-- ▼▼▼ ここにタイトルを追加 ▼▼▼ -->
             <h2 class="quiz-title">ビッグ・ファイブ適職診断</h2>
             <div class="progress-container">
                 <div id="progress-bar"></div>
@@ -32,7 +32,6 @@
             </div>
             <h2 id="question">質問文がここに表示されます</h2>
             <div class="answer-options">
-                <!-- ▼▼▼ 文言とクラスを変更 ▼▼▼ -->
                 <span class="label-agree">よく当てはまる</span>
                 <div class="scale-buttons">
                     <button class="scale-btn" data-value="5"></button>
@@ -54,9 +53,7 @@
                 <h4>向いている職種の例</h4>
                 <ul id="job-list"></ul>
             </div>
-            <a href="https://torajiroworks.com/jobsearch/#LP202307-form" class="cta-button" target="_blank">
-                あなたの強みを活かせる求人を探す<br><span>プロの無料キャリア相談受付中！</span>
-            </a>
+            <!-- ▼▼▼【削除】特定の企業へのCTAボタン(aタグ)を削除 ▼▼▼ -->
             <button id="retry-btn" class="retry-button">もう一度診断する</button>
         </div>
     </div>
