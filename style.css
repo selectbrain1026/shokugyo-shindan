@@ -1,104 +1,230 @@
+:root {
+    --primary-color: #007BFF;
+    --primary-hover-color: #0056b3;
+    --secondary-color: #f0f8ff;
+    --text-color: #333;
+    --light-text-color: #555;
+    --bg-color: #f4f7f9;
+    --card-bg-color: #ffffff;
+    --border-color: #e0e0e0;
+}
+
 body {
-  font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-#shindan-container {
-  background-color: white;
-  padding: 2em 3em;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
-h1 {
-  color: #007BFF;
-  margin-bottom: 1.5em;
+.hidden {
+    display: none;
 }
 
-h2 {
-  border-bottom: 2px solid #007BFF;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
+/* --- スタート画面 --- */
+.main-title {
+    color: var(--primary-color);
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+.description {
+    font-size: 1.1em;
+    color: var(--light-text-color);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+.start-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.start-button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
 }
 
-.choice-button {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  font-size: 1em;
-  font-weight: bold;
-  color: #007BFF;
-  background-color: #fff;
-  border: 2px solid #007BFF;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* --- クイズ画面 --- */
+.progress-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    height: 20px;
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    transition: width 0.4s ease-in-out;
+}
+#progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.8em;
 }
 
-.choice-button:hover {
-  background-color: #007BFF;
-  color: white;
+#question {
+    font-size: 1.5em;
+    min-height: 100px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#result-area {
-  animation: fadeIn 1s;
+.answer-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: var(--light-text-color);
+    font-size: 0.9em;
+}
+.scale-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.scale-btn {
+    border: 2px solid var(--border-color);
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.scale-btn:nth-child(1) { width: 40px; height: 40px; }
+.scale-btn:nth-child(2) { width: 32px; height: 32px; }
+.scale-btn:nth-child(3) { width: 24px; height: 24px; }
+.scale-btn:nth-child(4) { width: 32px; height: 32px; }
+.scale-btn:nth-child(5) { width: 40px; height: 40px; }
+.scale-btn:hover {
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+.scale-btn.selected {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-#result-type {
-  color: #E63946;
-  font-size: 1.8em;
+/* --- 結果画面 --- */
+.result-title {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
-
+.result-card {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+#result-type-name {
+    font-size: 1em;
+    color: var(--light-text-color);
+}
+#result-type-title {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 5px 0 20px;
+}
 #result-description {
-  text-align: left;
-  line-height: 1.8;
-  margin-bottom: 2em;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
-
 #job-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
 #job-list li {
-  background-color: #f0f0f0;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9em;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #FF6F61;
-  color: white;
-  padding: 15px 30px;
-  margin-top: 2em;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  line-height: 1.5;
+    display: block;
+    width: 100%;
+    background-color: #ff6347;
+    color: white;
+    padding: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.cta-button:hover {
+    background-color: #e55337;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.4);
+}
+.cta-button span {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-top: 4px;
+}
+.retry-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.retry-button:hover {
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.cta-button:hover {
-  background-color: #e65a50;
+/* アニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#start-screen, #quiz-screen, #result-screen {
+    animation: fadeIn 0.8s ease-in-out;
 }

@@ -3,32 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あなたのやりがい発見！適職診断</title>
+    <title>【寅二郎ワークス完全オリジナル】ビッグ・ファイブ適職診断</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="shindan-container">
-        <h1>あなたのやりがい発見！適職診断</h1>
-        
-        <div id="question-area">
-            <h2 id="question-title"></h2>
-            <p id="question-text"></p>
-            <div id="choices"></div>
+    <div class="container">
+        <div id="start-screen">
+            <h1 class="main-title">【寅二郎ワークス完全オリジナル】<br>ビッグ・ファイブ適職診断</h1>
+            <p class="description">
+                科学的に信頼性の高い性格分析モデル「ビッグ・ファイブ」を用いて、あなたの隠れた強みと本当にやりがいを感じる仕事を明らかにします。
+            </p>
+            <button id="start-btn" class="start-button">診断をはじめる</button>
         </div>
 
-        <div id="result-area" style="display: none;">
-            <h2>診断結果</h2>
-            <h3 id="result-type">あなたは「〇〇タイプ」です！</h3>
-            <p id="result-description"></p>
-            <div id="result-jobs">
-                <h4>向いている職種の例</h4>
-                <ul id="job-list"></ul>
+        <div id="quiz-screen" class="hidden">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+                <span id="progress-text">1 / 30</span>
             </div>
-            <!-- ここが集客のポイント！ あなたの会社のサイトURLに変更してください -->
-            <a href="https://あなたの会社のサイトURL" class="cta-button" target="_blank">
-                もっと詳しく知りたい方はこちら！<br>プロのキャリア相談（無料）
+            <h2 id="question">質問文がここに表示されます</h2>
+            <div class="answer-options">
+                <span>強くそう思う</span>
+                <div class="scale-buttons">
+                    <button class="scale-btn" data-value="5"></button>
+                    <button class="scale-btn" data-value="4"></button>
+                    <button class="scale-btn" data-value="3"></button>
+                    <button class="scale-btn" data-value="2"></button>
+                    <button class="scale-btn" data-value="1"></button>
+                </div>
+                <span>全くそう思わない</span>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 class="result-title">診断結果</h2>
+            <div class="result-card">
+                <div id="result-type-name">あなたのタイプは...</div>
+                <h3 id="result-type-title">〇〇の〇〇</h3>
+                <p id="result-description">ここにタイプの説明文が表示されます。</p>
+                <h4>向いている職種の例</h4>
+                <ul id="job-list">
+                    <!-- <li>ここに職種が入ります</li> -->
+                </ul>
+            </div>
+            <a href="https://torajiroworks.com/jobsearch/#LP202307-form" class="cta-button" target="_blank">
+                あなたの強みを活かせる求人を探す<br><span>プロの無料キャリア相談受付中！</span>
             </a>
+            <button id="retry-btn" class="retry-button">もう一度診断する</button>
         </div>
     </div>
 
