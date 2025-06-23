@@ -24,13 +24,16 @@
         </div>
 
         <div id="quiz-screen" class="hidden">
+            <!-- ▼▼▼ ここにタイトルを追加 ▼▼▼ -->
+            <h2 class="quiz-title">ビッグ・ファイブ適職診断</h2>
             <div class="progress-container">
                 <div id="progress-bar"></div>
                 <span id="progress-text">1 / 30</span>
             </div>
             <h2 id="question">質問文がここに表示されます</h2>
             <div class="answer-options">
-                <span>強くそう思う</span>
+                <!-- ▼▼▼ 文言とクラスを変更 ▼▼▼ -->
+                <span class="label-agree">よく当てはまる</span>
                 <div class="scale-buttons">
                     <button class="scale-btn" data-value="5"></button>
                     <button class="scale-btn" data-value="4"></button>
@@ -38,7 +41,7 @@
                     <button class="scale-btn" data-value="2"></button>
                     <button class="scale-btn" data-value="1"></button>
                 </div>
-                <span>全くそう思わない</span>
+                <span class="label-disagree">全く当てはまらない</span>
             </div>
         </div>
 

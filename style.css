@@ -7,6 +7,8 @@
     --bg-color: #f4f7f9;
     --card-bg-color: #ffffff;
     --border-color: #e0e0e0;
+    --agree-color: #28a745;  /* 緑色を定義 */
+    --disagree-color: #dc3545; /* 赤色を定義 */
 }
 
 body {
@@ -39,20 +41,20 @@ body {
 }
 
 /* --- スタート画面 --- */
-
-/* ▼▼▼ PC用のタイトルスタイル（デフォルト）▼▼▼ */
-/* 最初期の美しい1行表示を再現 */
 .main-title {
     color: var(--primary-color);
-    font-size: 2.0em; /* 全体の基準となるサイズ */
     margin-bottom: 20px;
-    line-height: 1.4;
+    line-height: 1.5;
 }
-/* PCではspanタグは特別な意味を持たせず、ただの横並びにする */
-.main-title-sub,
+.main-title-sub {
+    display: block;
+    font-size: 1.5em; 
+    font-weight: normal;
+    margin-bottom: 0.2em;
+}
 .main-title-main {
-    display: inline; /* これで横並びになる */
-    font-size: 1em; /* 親のfont-sizeを継承 */
+    display: block;
+    font-size: 2.2em; 
     font-weight: 700;
 }
 
@@ -62,7 +64,6 @@ body {
     line-height: 1.8;
     margin-bottom: 40px;
 }
-
 .start-button {
     background-color: var(--primary-color);
     color: white;
@@ -80,6 +81,13 @@ body {
 }
 
 /* --- クイズ画面 --- */
+/* ▼▼▼ 追加したタイトルのスタイル ▼▼▼ */
+.quiz-title {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
 .progress-container {
     width: 100%;
     background-color: #e9ecef;
@@ -119,9 +127,16 @@ body {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    color: var(--light-text-color);
     font-size: 0.9em;
 }
+/* ▼▼▼ ラベルの色指定を追加 ▼▼▼ */
+.label-agree {
+    color: var(--agree-color);
+}
+.label-disagree {
+    color: var(--disagree-color);
+}
+
 .scale-buttons {
     display: flex;
     gap: 10px;
@@ -256,23 +271,15 @@ body {
         justify-content: center;
     }
 
-    /* ▼▼▼ スマホでは、タイトルを1行ずつに強制的に変更 ▼▼▼ */
-    .main-title {
-        line-height: 1.5;
-    }
-    .main-title-sub,
-    .main-title-main {
-        display: block; /* これで改行される */
-    }
+    /* ▼▼▼ スマホ用のタイトルスタイル ▼▼▼ */
     .main-title-sub {
-        font-size: 4.5vw; /* 画面幅に応じて伸縮 */
+        font-size: 4.5vw;
         font-weight: bold;
     }
     .main-title-main {
-        font-size: 6.5vw; /* 画面幅に応じて伸縮 */
+        font-size: 6.5vw;
         font-weight: 700;
     }
-
 
     .description {
         font-size: 1.0em;
@@ -282,6 +289,11 @@ body {
     .start-button {
         padding: 15px 30px;
         font-size: 1.1em;
+    }
+
+    /* ▼▼▼ スマホ用のクイズタイトルのスタイル ▼▼▼ */
+    .quiz-title {
+        font-size: 1.2em;
     }
 
     #question {
