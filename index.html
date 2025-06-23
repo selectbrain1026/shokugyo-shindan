@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたのやりがい発見！適職診断</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="shindan-container">
+        <h1>あなたのやりがい発見！適職診断</h1>
+        
+        <div id="question-area">
+            <h2 id="question-title"></h2>
+            <p id="question-text"></p>
+            <div id="choices"></div>
+        </div>
+
+        <div id="result-area" style="display: none;">
+            <h2>診断結果</h2>
+            <h3 id="result-type">あなたは「〇〇タイプ」です！</h3>
+            <p id="result-description"></p>
+            <div id="result-jobs">
+                <h4>向いている職種の例</h4>
+                <ul id="job-list"></ul>
+            </div>
+            <!-- ここが集客のポイント！ あなたの会社のサイトURLに変更してください -->
+            <a href="https://あなたの会社のサイトURL" class="cta-button" target="_blank">
+                もっと詳しく知りたい方はこちら！<br>プロのキャリア相談（無料）
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
