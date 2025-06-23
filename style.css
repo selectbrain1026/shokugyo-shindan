@@ -39,30 +39,24 @@ body {
 }
 
 /* --- スタート画面 --- */
-
-/* ▼▼▼ PC用のタイトルスタイル（デフォルト）▼▼▼ */
-/* 最初期の美しい1行表示を再現 */
 .main-title {
     color: var(--primary-color);
-    font-size: 2.0em; /* 全体の基準となるサイズ */
+    font-size: 2.0em;
     margin-bottom: 20px;
     line-height: 1.4;
 }
-/* PCではspanタグは特別な意味を持たせず、ただの横並びにする */
 .main-title-sub,
 .main-title-main {
-    display: inline; /* これで横並びになる */
-    font-size: 1em; /* 親のfont-sizeを継承 */
+    display: inline;
+    font-size: 1em;
     font-weight: 700;
 }
-
 .description {
     font-size: 1.1em;
     color: var(--light-text-color);
     line-height: 1.8;
     margin-bottom: 40px;
 }
-
 .start-button {
     background-color: var(--primary-color);
     color: white;
@@ -80,6 +74,14 @@ body {
 }
 
 /* --- クイズ画面 --- */
+/* ▼▼▼【修正】タイトルを青色に ▼▼▼ */
+.quiz-title {
+    color: #007BFF;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .progress-container {
     width: 100%;
     background-color: #e9ecef;
@@ -104,7 +106,6 @@ body {
     font-weight: bold;
     font-size: 0.8em;
 }
-
 #question {
     font-size: 1.5em;
     min-height: 100px;
@@ -113,7 +114,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .answer-options {
     display: flex;
     justify-content: space-between;
@@ -122,6 +122,14 @@ body {
     color: var(--light-text-color);
     font-size: 0.9em;
 }
+/* ▼▼▼【追加】ラベルの色を指定 ▼▼▼ */
+.label-agree {
+    color: #28a745; /* 緑色 */
+}
+.label-disagree {
+    color: #dc3545; /* 赤色 */
+}
+
 .scale-buttons {
     display: flex;
     gap: 10px;
@@ -147,7 +155,6 @@ body {
     border-color: var(--primary-color);
     background-color: var(--primary-color);
 }
-
 
 /* --- 結果画面 --- */
 .result-title {
@@ -192,7 +199,6 @@ body {
     font-weight: bold;
     border: 1px solid var(--border-color);
 }
-
 .cta-button {
     display: block;
     width: 100%;
@@ -236,18 +242,15 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 #start-screen, #quiz-screen, #result-screen {
     animation: fadeIn 0.8s ease-in-out;
 }
-
 
 /* --- ここからレスポンシブ対応（スマホ用スタイル） --- */
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
-
     .container {
         padding: 20px;
         min-height: calc(100vh - 40px);
@@ -255,45 +258,40 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-
-    /* ▼▼▼ スマホでは、タイトルを1行ずつに強制的に変更 ▼▼▼ */
     .main-title {
         line-height: 1.5;
     }
     .main-title-sub,
     .main-title-main {
-        display: block; /* これで改行される */
+        display: block;
     }
     .main-title-sub {
-        font-size: 4.5vw; /* 画面幅に応じて伸縮 */
+        font-size: 4.5vw;
         font-weight: bold;
     }
     .main-title-main {
-        font-size: 6.5vw; /* 画面幅に応じて伸縮 */
+        font-size: 6.5vw;
         font-weight: 700;
     }
-
-
     .description {
         font-size: 1.0em;
         margin-bottom: 30px;
     }
-    
     .start-button {
         padding: 15px 30px;
         font-size: 1.1em;
     }
-
     #question {
         font-size: 1.3em;
         min-height: 120px;
         margin-bottom: 30px;
     }
-
-    .answer-options {
+    
+    /* ▼▼▼【修正】縦並びになる指定を削除し、PCと同じ横並びにする ▼▼▼ */
+    /* .answer-options {
         flex-direction: column;
         gap: 15px;
-    }
+    } */
 
     .scale-btn:nth-child(1) { width: 38px; height: 38px; }
     .scale-btn:nth-child(2) { width: 30px; height: 30px; }
@@ -304,11 +302,9 @@ body {
     #result-type-title {
         font-size: 1.8em;
     }
-
     .result-card {
         padding: 20px;
     }
-
     .cta-button {
         font-size: 1.0em;
         padding: 15px;
