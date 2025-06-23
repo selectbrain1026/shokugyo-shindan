@@ -194,10 +194,6 @@ body {
     font-weight: bold;
     border: 1px solid var(--border-color);
 }
-
-/* ▼▼▼【削除】不要になったCTAボタンのスタイルを削除 ▼▼▼ */
-
-/* ▼▼▼【修正】「もう一度診断する」ボタンをオレンジ色に変更 ▼▼▼ */
 .retry-button {
     background-color: #ff6347; /* オレンジ色 */
     color: white;
@@ -237,13 +233,18 @@ body {
         flex-direction: column;
         justify-content: center;
     }
+    
+    /* ▼▼▼【修正】タイトルを1行表示にするための修正 ▼▼▼ */
     .main-title {
-        line-height: 1.5;
+        font-size: 7.5vw;      /* 画面幅に応じてフォントサイズを調整 */
+        white-space: nowrap;   /* テキストが折り返さないようにする */
+        line-height: 1.4;
     }
     .main-title-main {
-        display: block;
-        font-size: 8vw; /* サイズ調整 */
+        display: inline;       /* display:block; を解除 */
+        font-size: 1em;        /* 親要素のフォントサイズを継承 */
     }
+
     .description {
         font-size: 1.0em;
         margin-bottom: 30px;
