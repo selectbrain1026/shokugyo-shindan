@@ -46,13 +46,13 @@ body {
 }
 .main-title-sub {
     display: block;
-    font-size: 1.5em; /* PCでのサブタイトルサイズ */
+    font-size: 1.5em; 
     font-weight: bold;
     margin-bottom: 0.2em;
 }
 .main-title-main {
     display: block;
-    font-size: 2.5em; /* PCでのメインタイトルサイズ */
+    font-size: 2.5em; 
     font-weight: 700;
 }
 
@@ -254,17 +254,14 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-
-    .main-title-sub,
-    .main-title-main {
-        white-space: nowrap; /* これで絶対に文字が折り返されなくなります */
-    }
-
+    
     .main-title-sub {
-        font-size: 1.0em; /* スマホ用に思い切って小さく */
+        /* 画面幅の4.5%の文字サイズにする。これで自動的に伸縮する */
+        font-size: 4.5vw; 
     }
     .main-title-main {
-        font-size: 1.6em; /* こちらもバランスを調整 */
+        /* 画面幅の6.5%の文字サイズにする。 */
+        font-size: 6.5vw;
     }
 
     .description {
