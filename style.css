@@ -39,20 +39,20 @@ body {
 }
 
 /* --- スタート画面 --- */
+
+/* ▼▼▼ PC用のタイトルスタイル（デフォルト）▼▼▼ */
+/* 最初期の美しい1行表示を再現 */
 .main-title {
     color: var(--primary-color);
+    font-size: 2.0em; /* 全体の基準となるサイズ */
     margin-bottom: 20px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
-.main-title-sub {
-    display: block;
-    font-size: 1.5em; 
-    font-weight: normal; /* 太さを標準に戻す */
-    margin-bottom: 0.2em;
-}
+/* PCではspanタグは特別な意味を持たせず、ただの横並びにする */
+.main-title-sub,
 .main-title-main {
-    display: block;
-    font-size: 2.2em; /* サイズを少し戻す */
+    display: inline; /* これで横並びになる */
+    font-size: 1em; /* 親のfont-sizeを継承 */
     font-weight: 700;
 }
 
@@ -62,6 +62,7 @@ body {
     line-height: 1.8;
     margin-bottom: 40px;
 }
+
 .start-button {
     background-color: var(--primary-color);
     color: white;
@@ -254,15 +255,24 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-    
+
+    /* ▼▼▼ スマホでは、タイトルを1行ずつに強制的に変更 ▼▼▼ */
+    .main-title {
+        line-height: 1.5;
+    }
+    .main-title-sub,
+    .main-title-main {
+        display: block; /* これで改行される */
+    }
     .main-title-sub {
-        /* 画面幅の4.5%の文字サイズにする。これで自動的に伸縮する */
-        font-size: 4.5vw; 
+        font-size: 4.5vw; /* 画面幅に応じて伸縮 */
+        font-weight: bold;
     }
     .main-title-main {
-        /* 画面幅の6.5%の文字サイズにする。 */
-        font-size: 6.5vw;
+        font-size: 6.5vw; /* 画面幅に応じて伸縮 */
+        font-weight: 700;
     }
+
 
     .description {
         font-size: 1.0em;
