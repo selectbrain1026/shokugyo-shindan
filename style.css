@@ -47,12 +47,12 @@ body {
 .main-title-sub {
     display: block;
     font-size: 1.5em; 
-    font-weight: bold;
+    font-weight: normal; /* 太さを標準に戻す */
     margin-bottom: 0.2em;
 }
 .main-title-main {
     display: block;
-    font-size: 2.5em; 
+    font-size: 2.2em; /* サイズを少し戻す */
     font-weight: 700;
 }
 
