@@ -76,11 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scaleButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Add a selected class to the clicked button
             scaleButtons.forEach(btn => btn.classList.remove('selected'));
             e.target.classList.add('selected');
             
-            // Wait a bit for the animation, then proceed
             setTimeout(() => {
                 const value = parseInt(e.target.dataset.value);
                 selectAnswer(value);
@@ -105,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
             progressBar.style.width = `${progress}%`;
             progressText.textContent = `${currentQuestionIndex + 1} / ${questions.length}`;
 
-            // Remove selection from buttons
             scaleButtons.forEach(btn => btn.classList.remove('selected'));
         }
     }
@@ -131,17 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
         quizScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
 
-        // Convert scores object to array and sort
         const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
         
         const primaryFactor = sortedScores[0][0];
         const secondaryFactor = sortedScores[1][0];
 
-        // Ensure the key is always in alphabetical order (e.g., A_C, not C_A)
         const resultKey = [primaryFactor, secondaryFactor].sort().join('_');
         
-        // Handle cases where a key might not exist (though unlikely with this setup)
-        const result = results[resultKey] || results["A_C"]; // Fallback to a default
+        const result = results[resultKey] || results["A_C"];
 
         document.getElementById('result-type-title').textContent = result.title;
         document.getElementById('result-description').textContent = result.description;

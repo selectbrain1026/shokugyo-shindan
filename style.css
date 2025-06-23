@@ -41,10 +41,20 @@ body {
 /* --- スタート画面 --- */
 .main-title {
     color: var(--primary-color);
-    font-size: 2.0em;
     margin-bottom: 20px;
     line-height: 1.4;
 }
+.main-title-sub {
+    display: block;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+.main-title-main {
+    display: block;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
 .description {
     font-size: 1.1em;
     color: var(--light-text-color);
@@ -228,6 +238,8 @@ body {
 #start-screen, #quiz-screen, #result-screen {
     animation: fadeIn 0.8s ease-in-out;
 }
+
+
 /* --- ここからレスポンシブ対応（スマホ用スタイル） --- */
 /* 画面幅が768px以下の場合に適用されるスタイル */
 @media (max-width: 768px) {
@@ -237,15 +249,17 @@ body {
 
     .container {
         padding: 20px;
-        /* スマホでは画面いっぱいに広がるように */
         min-height: calc(100vh - 40px);
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .main-title {
-        font-size: 1.8em; /* スマホ用に少し小さく */
+    .main-title-sub {
+        font-size: 1.2em;
+    }
+    .main-title-main {
+        font-size: 1.8em;
     }
 
     .description {
@@ -259,13 +273,13 @@ body {
     }
 
     #question {
-        font-size: 1.3em; /* 質問の文字サイズを調整 */
-        min-height: 120px; /* 高さを確保 */
+        font-size: 1.3em;
+        min-height: 120px;
         margin-bottom: 30px;
     }
 
     .answer-options {
-        flex-direction: column; /* 縦並びに変更 */
+        flex-direction: column;
         gap: 15px;
     }
 
@@ -276,7 +290,7 @@ body {
     .scale-btn:nth-child(5) { width: 38px; height: 38px; }
 
     #result-type-title {
-        font-size: 1.8em; /* 結果のタイトルを調整 */
+        font-size: 1.8em;
     }
 
     .result-card {
